@@ -1,5 +1,4 @@
 %h2 Userlist
 %ul{"class" => "rounded"}
   - @users.each do |user|
-    %li{"class" => "forward"}= link_to user.username, user
-    %li{"class" => "forward"} Hans
+    %li{"class" => "arrow"}= link_to user.username, user
