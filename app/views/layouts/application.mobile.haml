@@ -3,17 +3,36 @@
   %head
     %title Testapp - Mobile
     = stylesheet_link_tag :all
+    = stylesheet_link_tag "jqtouch/jqtouch.min.css", "jqtouch/themes/jqt/theme.min.css"
     = javascript_include_tag :defaults
-
-		-# jQtouch needed assets
-    = stylesheet_link_tag "/jqtouch/jqtouch.min.css", "/jqtouch/themes/apple/theme.min.css"
-    = javascript_include_tag "/jqtouch/jquery.1.3.2.min.js", "/jqtouch/jqtouch.min.js", 'mobile'
-
+    = javascript_include_tag "jqtouch/jqtouch.min.js", "mobile"
     = csrf_meta_tag
-  %body
-    %ul.hmenu
+    %body
+    #home.current
+      .toolbar
+        %h1 WeightBuddy
+        = render 'devise/menu/login_items'
       = render 'devise/menu/registration_items'
-      = render 'devise/menu/login_items'
-    %p{:style => "color: green"}= notice
-    %p{:style => "color: red"}= alert
-    = yield
+      - unless flash.empty?
+        %p.info{:style => "color: green"}= notice
+        %p.info{:style => "color: red"}= alert
+      = yield
+      %h1 Styles
+      %h2 Rounded
+      %ul.rounded
+        %li half size 1
+        %li half size 2
+      %h2 Edge to Edge
+      %ul.edgetoedge
+        %li.forwards half size 1
+        %li.arrow half size 2
+      %h2 Plastic
+      %ul.plastic
+        %li.forwards half size 1
+        %li.arrow half size 2
+      %h2 Individual
+      %ul.individual
+        %li half size 1
+        %li half size 2
+      .info
+        %p Work done for the RMU
