@@ -1,0 +1,6 @@
+h1. ToDo's
+- Setup GMail account for mailing
+-- config/initializers/devise.rb
+
+- Setup Heroku
+-- config/environments/production.rb
