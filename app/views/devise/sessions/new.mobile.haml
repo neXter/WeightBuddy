@@ -1,0 +1,14 @@
+#sessionsNew
+  - @title = "Sign in"
+  = render 'shared/header'
+
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    %ul.rounded
+      %li= f.text_field :email, :placeholder => "Your E-Mail Address"
+      %li= f.password_field :password, :placeholder => "Your Password"
+      - if devise_mapping.rememberable?
+        %li
+          = f.check_box :remember_me, :placeholder => "Remember me"
+          = f.label :remember_me
+    %h2= f.submit "Sign in", :name => "action", :class => "grayButton"
+  = render :partial => "devise/shared/links"

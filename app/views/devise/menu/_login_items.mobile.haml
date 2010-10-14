@@ -1,4 +1,4 @@
 - if user_signed_in?
-  %p{:class => "button slideup"}= link_to('Logout', destroy_user_session_path)
+  %div{:class => "button"}= link_to('Logout', destroy_user_session_path)
 - else
-  %p{:class => "button slideup"}= link_to('Login', new_user_session_path)
+  %div{:class => "button"}= link_to('Login', new_user_session_path)

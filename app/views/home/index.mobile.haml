@@ -1,4 +1,27 @@
-%h2 Userlist
-%ul{"class" => "rounded"}
-  - @users.each do |user|
-    %li{"class" => "arrow"}= link_to user.username, user
+#homeIndex
+  = render 'shared/header'
+  = render 'devise/menu/login_items'
+  = render 'devise/menu/registration_items'
+  %ul{"class" => "rounded"}
+    - @users.each do |user|
+      %li{"class" => "arrow"}= link_to user.username, user
+
+  -# Styletesting
+  %hr
+  %h1 Stylesting
+  %h2 Rounded
+  %ul.rounded
+    %li full size
+    %li full size
+  %h2 Edge to Edge
+  %ul.edgetoedge
+    %li.forwards full size 1
+    %li.arrow full size 2
+  %h2 Plastic
+  %ul.plastic
+    %li.forwards full size 1
+    %li.arrow full size 2
+  %h2 Individual
+  %ul.individual
+    %li half size 1
+    %li half size 2

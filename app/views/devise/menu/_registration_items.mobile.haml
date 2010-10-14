@@ -1,5 +1,6 @@
 - if user_signed_in?
-  .button.slideup= link_to('Edit account', edit_user_registration_path)
+  %ul.rounded
+    %li.forward= link_to('Edit account', edit_user_registration_path)
 - else
   %ul.rounded
     %li.forward= link_to('Sign up', new_user_registration_path)

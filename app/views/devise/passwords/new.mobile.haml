@@ -1,0 +1,11 @@
+#passwordsNew
+  - @title = "Forgot your password?"
+  = render 'shared/header'
+
+  = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+    = devise_error_messages!
+    %ul.rounded
+      %li= f.text_field :email, :placeholder => "Email Adress"
+    %h2= f.submit "Send me reset password instructions", :class => "grayButton"
+  = render :partial => "devise/shared/links"
+  
