@@ -1,6 +1,6 @@
 - if user_signed_in?
   %ul.rounded
-    %li.forward= link_to('Edit account', edit_user_registration_path)
+    %li.arrow= link_to image_tag("icons/user-profile.png", :width => "20", :align => "top", :style => "padding-right: 10px;") + "Edit account", edit_user_registration_path
 - else
   %ul.rounded
     %li.forward= link_to('Sign up', new_user_registration_path)

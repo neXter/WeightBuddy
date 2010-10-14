@@ -9,9 +9,9 @@
       %li= f.text_field :email, :placeholder => "Email Address"
       %li= f.password_field :password, :placeholder => "Password"
       %li= f.password_field :password_confirmation, :placeholder => "Password Confirmation"
-      %p.info (leave both fields blank if you don't want to change it)
+      %div (leave both fields blank if you don't want to change it)
       %li= f.password_field :current_password, :placeholder => "Current Password"
-      %p.info (we need your current password to confirm your changes)
+      %div (we need your current password to confirm your changes)
     %h2= f.submit "Update", :class => "grayButton"
   %h2 Cancel my account
   %h2.info

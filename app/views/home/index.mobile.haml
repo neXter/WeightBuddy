@@ -1,27 +1,15 @@
 #homeIndex
   = render 'shared/header'
   = render 'devise/menu/login_items'
+  - if user_signed_in?
+    %h2 Welcome, #{current_user.username}
+    %ul.rounded
+      %li.forward
+        =link_to image_tag("icons/track-weight.png", :width => "20", :align => "top", :style => "padding-right: 10px;") + "Track Weight", new_weight_path
+      %li.forward
+        =link_to image_tag("icons/chart.png", :width => "20", :align => "top", :style => "padding-right: 10px;") + "Chart My Weight", chart_path
+    %h2 Administration
+  - unless user_signed_in?
+    %div.info{:style => "color: #69B; font-size: 110%;"}
+      Weight Buddy is a platform to track your weight, daily. And to create nice graphs.
   = render 'devise/menu/registration_items'
-  %ul{"class" => "rounded"}
-    - @users.each do |user|
-      %li{"class" => "arrow"}= link_to user.username, user
-
-  -# Styletesting
-  %hr
-  %h1 Stylesting
-  %h2 Rounded
-  %ul.rounded
-    %li full size
-    %li full size
-  %h2 Edge to Edge
-  %ul.edgetoedge
-    %li.forwards full size 1
-    %li.arrow full size 2
-  %h2 Plastic
-  %ul.plastic
-    %li.forwards full size 1
-    %li.arrow full size 2
-  %h2 Individual
-  %ul.individual
-    %li half size 1
-    %li half size 2
