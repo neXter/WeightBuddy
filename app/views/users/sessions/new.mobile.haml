@@ -2,6 +2,7 @@
   - @title = "Sign in"
   = render 'shared/header'
 
+  %h2 Enter data to sign in
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     %ul.rounded
       %li= f.text_field :email, :placeholder => "Your E-Mail Address"

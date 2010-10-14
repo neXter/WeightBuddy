@@ -1,7 +1,7 @@
 .toolbar
   %h1= @title
   - unless current_page? root_path
-    .back= link_to('Back', root_path)
+    .back= link_to('Back', "/")
 - unless flash.empty?
   %p.info{:style => "color: green"}= notice
   %p.info{:style => "color: red"}= alert

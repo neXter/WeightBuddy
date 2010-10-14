@@ -7,5 +7,6 @@ class WeightsController < ApplicationController
   end
   
   def chart
+    @title = "Chart your Weight"
   end
 end
